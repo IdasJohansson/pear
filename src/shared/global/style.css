@@ -1,0 +1,13 @@
+:root
+{
+  color: black; 
+}
+
+*{
+  margin: 0; 
+  padding: 0; 
+}
+
+img {
+  max-width: 100%; /*Så att inte bilden blir större än sitt föräldraelement*/
+}
