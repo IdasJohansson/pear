@@ -13,10 +13,12 @@ export const LogInForm = () => {
         <>
            <form className="logInForm">
                 <label>
-                    <input placeholder="Enter username"></input>
+                    <h2>USERNAME</h2>
+                    <input placeholder="Enter username" type="text" name="username"></input>
                 </label><br/>
                 <label>
-                    <input placeholder="Enter password"></input>
+                <h2>PASSWORD</h2>
+                    <input placeholder="Enter password" type="password" name="password"></input>
                 </label><br/>
                 <button type="submit" onClick={()=> logIn()}> LOG IN </button>
             </form>

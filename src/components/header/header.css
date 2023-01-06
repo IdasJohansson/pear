@@ -1,4 +1,7 @@
 .header-container{
     height: 60px; 
     text-align: right;
+    margin-bottom: 20px; 
+    background-color: black; 
+    color: white; 
 }
