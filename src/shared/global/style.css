@@ -11,3 +11,13 @@
 img {
   max-width: 100%; /*Så att inte bilden blir större än sitt föräldraelement*/
 }
+
+button {
+  margin: 10px; 
+  padding: 10px; 
+  border-radius: 10px;
+}
+
+.container{
+    height: 80vh;
+}
