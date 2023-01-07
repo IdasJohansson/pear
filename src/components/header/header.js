@@ -19,9 +19,9 @@ export const Header = () => {
     return (
         <>
         <div className="header-container">
-       <div id="logOutButton">
-        <button type="submit" onClick={()=> logOut()}> LOG OUT </button>
-       </div>
+        <div id="logOutButton">
+            <button type="submit" onClick={()=> logOut()}> LOG OUT </button>
+        </div>
         </div>
         </>
     )
