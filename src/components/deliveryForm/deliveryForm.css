@@ -1,10 +1,15 @@
 .deliveryForm {
     margin-left: auto; 
     margin-right: auto;
-    margin-top: 50px; 
+    margin-top: 30px; 
     width: 50%; 
     padding: 20px; 
     border-radius: 20px;
     box-shadow: 0px 0px 13px 3px black;
+}
+
+#user{
+    text-align: right;
+    margin-right: 20px ;
 }
 

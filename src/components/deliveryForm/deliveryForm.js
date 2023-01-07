@@ -1,17 +1,19 @@
-import "../../shared/global/style.css"
-import "./deliveryForm.css"
+import "../../shared/global/style.css"; 
+import "./deliveryForm.css"; 
+import { useContext } from "react";
+import { UserContext } from "../../shared/provider/UserProvider";
 
 export const DeliveryForm = () => {
-
+    const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
     const saveInput = () => {
      
     }
 
     return (
         <>
+         <p id="user">{authenticatedUser}</p> 
            <form className="deliveryForm">
                 <label>
-
                 <div className="dropdown">
                         <label for dropdown> In/Out: </label> <br/>
                         <select name="dropdown">
