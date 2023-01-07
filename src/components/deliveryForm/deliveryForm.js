@@ -3,6 +3,9 @@ import "./deliveryForm.css"
 
 export const DeliveryForm = () => {
 
+    const saveInput = () => {
+     
+    }
 
     return (
         <>
@@ -10,7 +13,7 @@ export const DeliveryForm = () => {
                 <label>
 
                 <div className="dropdown">
-                        <label for dropdown> In/Out: </label>
+                        <label for dropdown> In/Out: </label> <br/>
                         <select name="dropdown">
                         <option>In</option>
                         <option>Out</option>
@@ -18,7 +21,7 @@ export const DeliveryForm = () => {
                     </div>
 
                 <div className="dropdown">
-                        <label for dropdown> Warehouse: </label>
+                        <label for dropdown> Warehouse: </label> <br/>
                         <select name="dropdown">
                         <option>Cupertino</option>
                         <option>Norrköping</option>
@@ -27,7 +30,7 @@ export const DeliveryForm = () => {
                     </div>
 
                     <div className="dropdown">
-                        <label for dropdown> Product: </label>
+                        <label for dropdown> Product: </label> <br/>
                         <select name="dropdown">
                         <option>JTelefon</option>
                         <option>JPlatta</option>
@@ -37,7 +40,7 @@ export const DeliveryForm = () => {
                     <input placeholder="pcs" type="text" name="inbound"></input>
                 </label><br/>
             
-                <button type="submit" onClick=""> SAVE </button>
+                <button type="submit" onClick={saveInput()}> SAVE </button>
                 
             </form>
 
