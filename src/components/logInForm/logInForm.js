@@ -32,7 +32,6 @@ export const LogInForm = () => {
     } catch (error) {
         alert("Error retrieving desired data from server: " + error);
     }
-
     console.log("After fetch.")
     }
 
@@ -45,10 +44,10 @@ export const LogInForm = () => {
                     <h2>USERNAME</h2>
                     <input placeholder="Enter username" type="text" name="username" onChange={(event) => setUsername(event.target.value)}></input>
                 </label><br/>
-                <label>
+                {/* <label>
                 <h2>PASSWORD</h2>
                     <input placeholder="Enter password" type="password" name="password" onChange={(event) => setPassword(event.target.value)}></input>
-                </label><br/>
+                </label><br/> */}
                 <button type="submit" onClick={()=> logIn()}> LOG IN </button>
             </form>
         </>
