@@ -1,16 +1,11 @@
 import "../../shared/global/style.css"
 import "./logInForm.css"
-import {useNavigate} from "react-router-dom"; 
-import routingPath from "../../routes/routingPath";
 import { useContext, useState } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 import LocalStorage from "../../shared/storage/LocalStorage"; 
-import { Axios } from "axios";
-
-
+import Axios from "axios";
 
 export const LogInForm = () => {
-    const navigate = useNavigate(); 
     
     // AuthenticatedUser is a global state
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
@@ -25,8 +20,25 @@ export const LogInForm = () => {
         localStorage.setItem(LocalStorage.username, username); 
     };
 
+    const [serverResponse, setServerResponse] = useState(""); 
+
+    const fetchData = async () => {
+    console.log("Fetch Data"); 
+    try {
+        const response = await Axios.get("https://localhost:7176/api/User/3fa85f64-5717-4562-b3fc-2c963f66afa6") 
+        console.log(response?.data?.userName)   
+        setServerResponse(response);   
+        console.log(serverResponse) ; 
+    } catch (error) {
+        alert("Error retrieving desired data from server: " + error);
+    }
+
+    console.log("After fetch.")
+    }
+
     return (
         <>
+        <button type="submit" onClick={() => fetchData()}> FETCH DATA </button>
            <form className="logInForm">
                {username}
                 <label>
