@@ -5,5 +5,13 @@
     background-color: black;
     /* background-image: linear-gradient(black, lightgray); */
     color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+font-size: 100px;
+color: lightgray; 
 }
 
