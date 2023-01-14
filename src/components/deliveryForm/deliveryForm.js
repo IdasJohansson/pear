@@ -58,22 +58,22 @@ export const DeliveryForm = () => {
          <p id="user"> User: {authenticatedUser}</p> 
            <form className="deliveryForm">
            <label>
-                Product: <br/>
+                <h2>Product: </h2> 
                 <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
                 {products.map(product => <option key={product.id} value={product.id}>{product.name}</option>)}
                 </select>
             </label> <br/>
             <label>
-                Warehouse: <br/>
+                <h2>Warehouse:</h2> 
                 <select value={selectedWarehouse} onChange={e => setSelectedWarehouse(e.target.value)}>
                 {warehouse.map(warehouse => <option key={warehouse.id} value={warehouse.id}>{warehouse.city}</option>)}
                 </select>
             </label>
             <label> <br/>
-                Quantity: <br/>
+                <h2> Quantity:</h2> 
                 <input placeholder="pcs" type="text" name="qty" onChange={e => setQuantity(e.target.value)}></input>
             </label> <br/>
-            <button type="submit" onClick={saveValues}>Save</button>
+            <button className="saveBtn" type="submit" onClick={saveValues}>SAVE</button>
             </form>
         </>
     )

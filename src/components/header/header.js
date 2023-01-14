@@ -20,7 +20,7 @@ export const Header = () => {
         <>
         <div className="header-container">
         <div id="logOutButton">
-            <button type="submit" onClick={()=> logOut()}> LOG OUT </button>
+            <button className="logInbutton" type="submit" onClick={()=> logOut()}> LOG OUT </button>
         </div>
         </div>
         </>
