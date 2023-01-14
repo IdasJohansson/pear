@@ -9,7 +9,7 @@ export const LogInForm = () => {
     
     // AuthenticatedUser is a global state
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
-    const [username, setUsername] = useState(); 
+    const [username, setUsername] = useState("Admin"); 
     const [password, setPassword] = useState(); 
 
     const logIn = () => {
