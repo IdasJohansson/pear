@@ -1,8 +1,9 @@
 .header-container{
-    height: 100px; 
+    height: 200px; 
     text-align: right;
     margin-bottom: 20px; 
-    background-color: black; 
+    background-color: black;
+    /* background-image: linear-gradient(black, lightgray); */
     color: white; 
 }
 

@@ -3,6 +3,7 @@ import "./deliveryForm.css";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 import Axios from "axios";
+import { LogOut } from "../logOut/logOut";
 
 export const DeliveryForm = () => {
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
@@ -55,7 +56,7 @@ export const DeliveryForm = () => {
     
     return (
         <>
-         <p id="user"> User: {authenticatedUser}</p> 
+        <LogOut> </LogOut>
            <form className="deliveryForm">
            <label>
                 <h2>Product: </h2> 

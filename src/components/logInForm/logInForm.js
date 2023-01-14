@@ -24,7 +24,7 @@ export const LogInForm = () => {
         <>
            <form className="logInForm">
                 <label>
-                    <h2>USERNAME</h2>
+                    <h2 className="loginH2">USERNAME</h2>
                     <input placeholder="Enter username" type="text" name="username" onChange={(event) => setUsername(event.target.value)}></input>
                 </label><br/>
                 {/* <label>
