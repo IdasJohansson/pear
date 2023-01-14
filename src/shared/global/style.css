@@ -1,6 +1,9 @@
 :root
 {
+  background-color: lightgray;
   color: black; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
 }
 
 *{
@@ -12,12 +15,39 @@ img {
   max-width: 100%; /*Så att inte bilden blir större än sitt föräldraelement*/
 }
 
-button {
-  margin: 10px; 
-  padding: 10px; 
-  border-radius: 10px;
+input{
+height: 30px; 
+font-family: Arial, Helvetica, sans-serif;
+width: 200px; 
+font-size: large;
+cursor: pointer;
+border: 2px dashed black;
 }
 
-.container{
-    height: 80vh;
+input:focus{
+  outline:none; 
 }
+
+select{
+  height: 30px; 
+  font-family: Arial, Helvetica, sans-serif;
+  width: 200px; 
+  font-size: large;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  border: 2px dashed black;
+}
+
+
+
+.container{
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
+    background-repeat: no-repeat;
+    background-position:bottom left;  
+}
+
+
