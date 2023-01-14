@@ -13,11 +13,11 @@ export const SignInView = () => {
 
     return (
         <>
-            <Header/>
             <div className="container">
+            <Header/>
                 <LogInForm/>
-            </div>
             <Footer/>
+            </div>
         </>
     )
 }
