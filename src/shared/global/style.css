@@ -45,8 +45,9 @@ select{
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
-    background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
-    /* background-repeat: no-repeat;
+    background-image: linear-gradient(black, lightgray); 
+     /* background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
+    background-repeat: no-repeat;
     background-position:bottom left;   */
 }
 
