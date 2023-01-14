@@ -13,20 +13,3 @@
     margin-right: 20px ;
 }
 
-.saveBtn{
-    margin-top:10px; 
-    width: 200px; 
-    color: #e1dfdd; 
-    background-color: black;
-    padding: 10px; 
-    opacity:0.7; 
-    font-size: large;
-    font-weight: 800;
-}
-
-.saveBtn:hover{
-    background-color: lightgrey;
-    color: black; 
-    transition: background-color 0.7s, color 0.7s; 
-    opacity:0.7;
-}
