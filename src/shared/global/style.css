@@ -46,8 +46,8 @@ select{
     display: flex;
     flex-direction: column;
     background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
-    background-repeat: no-repeat;
-    background-position:bottom left;  
+    /* background-repeat: no-repeat;
+    background-position:bottom left;   */
 }
 
 
