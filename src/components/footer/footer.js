@@ -6,8 +6,8 @@ export const Footer = () => {
     return (
         <>
         <div className="footer-container">
-        © Copyright Päron AB 2023  
         <img src={img} className="pear-icon" alt="pear" width="50px"/>
+        © Copyright Päron AB 2023
         </div>
         </>
     )

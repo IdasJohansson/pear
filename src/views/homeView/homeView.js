@@ -8,11 +8,11 @@ export const HomeView = () => {
  
     return (
         <>
-            <div className="container">
             <Header/>
+            <div className="container">
             <DeliveryForm/> 
-            <Footer/>
             </div>
+            <Footer/>
         </>
     )
 }
