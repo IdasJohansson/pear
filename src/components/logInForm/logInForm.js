@@ -31,7 +31,7 @@ export const LogInForm = () => {
         }
         })
         .catch(error => {
-        // handle error
+         alert("Error retrieving desired data from server: " + error);
         });
     }
     return (
