@@ -6,21 +6,13 @@ import LocalStorage from "../../shared/storage/LocalStorage";
 import Axios from "axios";
 
 export const LogInForm = () => {
-    
     // AuthenticatedUser is a global state
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
     const [username, setUsername] = useState(""); 
     const [password, setPassword] = useState(""); 
 
-    const logIn = () => {
-        // Give a value to authentictedUser
-        setAuthenticatedUser(username); 
-
-        // Saves logged in user in localstorage
-        localStorage.setItem(LocalStorage.username, username); 
-    };
-
     function handleSubmit(event) {
+    // Prevent the page from refreshing when form is submitted so that the apiCall will be called. 
     event.preventDefault();
     const user = { UserName: username, Password: password };
     Axios
@@ -28,18 +20,20 @@ export const LogInForm = () => {
         .then(response => {
         if (response.data) {
             // login was successful
-            console.log("you are logged in")
+            console.log("User logged in.");
+            // Give a value to authentictedUser
+            setAuthenticatedUser(username); 
+            // Saves loggedIn user in localstorage
+            localStorage.setItem(LocalStorage.username, username); 
         } else {
-            // login failed
-            console.log("log in failed")
+            // Login failed
+            alert("Login failed!")
         }
         })
         .catch(error => {
         // handle error
         });
     }
-
-
     return (
         <>
            <form className="logInForm" onSubmit={handleSubmit}>
@@ -47,13 +41,13 @@ export const LogInForm = () => {
                     <h2 className="loginH2">USERNAME</h2>
                     <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
                     </label>
-                    <br />
+                    <br/>
                     <label>
-                        Password:
-                        <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    <h2 className="loginH2"> PASSWORD: </h2> 
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
                     </label>
-                    <br />
-                    <button type="submit">Log in</button>
+                    <br/>
+                    <button className="logInbutton" type="submit">Log in</button>
             </form>
         </>
     )
