@@ -2,15 +2,14 @@
     height: 200px; 
     text-align: right;
     margin-bottom: 20px; 
-    background-color: black;
-    color: white; 
+    background-color: var(--darkcolor);
+    color: var(--lightcolor); 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 h1{
-font-size: 100px;
-color: lightgray; 
+font-size: 5em; 
 }
 
