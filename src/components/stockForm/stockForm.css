@@ -2,6 +2,10 @@ table{
     width: 100%;
 }
 
+thead{
+    width: 100%; 
+}
+
 td{
 border: 2px solid black; 
 padding: 5px;

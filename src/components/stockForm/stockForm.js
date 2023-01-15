@@ -52,17 +52,18 @@ export const StockQuantity = () => {
     <h2> Stock quantity </h2>
     <p> (Press column header to sort)</p>
     <table className="table">  
-    <tbody>
+      <thead>
             <tr>  
-                <th onClick={() => handleSort("warehouseId")} className={sortBy === "warehouseId" ? "active" : ""}>Warehouse</th>  
-                <th onClick={() => handleSort("productId")} className={sortBy === "productId" ? "active" : ""}>Product</th>  
+                <th onClick={() => handleSort("warehouseName")} className={sortBy === "warehouseName" ? "active" : ""}>Warehouse</th>  
+                <th onClick={() => handleSort("productName")} className={sortBy === "productName" ? "active" : ""}>Product</th>  
                 <th onClick={() => handleSort("quantity")} className={sortBy === "quantity" ? "active" : ""}>Quantity</th>  
             </tr>  
-    
+      </thead>
+    <tbody>
             {sortedStockQuantity.map((stockQuantity, index) => (  
               <tr data-index={index}>  
-                <td>{stockQuantity.warehouseId}</td>  
-                <td>{stockQuantity.productId}</td>  
+                <td>{stockQuantity.warehouseName}</td>  
+                <td>{stockQuantity.productName}</td>  
                 <td>{stockQuantity.quantity}</td>  
               </tr>  
             ))}  
