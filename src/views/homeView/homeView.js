@@ -12,7 +12,7 @@ export const HomeView = () => {
             <div className="container">
             <Header/>
             <DeliveryForm/> 
-            {/* <StockQuantity/>  */}
+            <StockQuantity/> 
             <Footer/>
             </div>
         </>
