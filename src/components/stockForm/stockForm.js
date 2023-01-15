@@ -7,7 +7,7 @@ export const StockQuantity = () => {
   const [stockQuantity, setStockQuantity] = useState([]);
 
   useEffect(() => {
-    const fecthWarehouseProductQuantity = async () => {
+   const fecthWarehouseProductQuantity = async () => {
       try{
         const response = await Axios.get("https://localhost:7176/api/Delivery/warehouse-product-quantity")
         setStockQuantity(response.data); 
@@ -52,6 +52,7 @@ export const StockQuantity = () => {
     <h2> Stock quantity </h2>
     <p> (Press column header to sort)</p>
     <table className="table">  
+    <tbody>
             <tr>  
                 <th onClick={() => handleSort("warehouseId")} className={sortBy === "warehouseId" ? "active" : ""}>Warehouse</th>  
                 <th onClick={() => handleSort("productId")} className={sortBy === "productId" ? "active" : ""}>Product</th>  
@@ -65,7 +66,7 @@ export const StockQuantity = () => {
                 <td>{stockQuantity.quantity}</td>  
               </tr>  
             ))}  
-    
+    </tbody>
         </table>  
     
     </div>

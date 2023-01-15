@@ -10,22 +10,11 @@ export const DeliveryForm = () => {
 
     // To store all the products in a array
     const [products, setProducts] = useState([]);
+    // To store the value being chosen in the dropdownmeny
     const [selectedProduct, setSelectedProduct] = useState('');
-
     const [warehouse, setWareHouse] = useState([]);
     const [selectedWarehouse, setSelectedWarehouse] = useState(''); 
-
     const [quantity, setQuantity] = useState(''); 
-
-    // const [productId, setProductId] = useState("P001"); 
-    // const [quantity, setQuantity] = useState("100"); 
-    // const [warehouseId,setWarehouseId] = useState("1"); 
-    // const [userId, setUserId] = useState("0460476b-60c9-48e3-9026-561302e7fa59"); 
-
-    // console.log(productId); 
-    // console.log(quantity); 
-    // console.log(warehouseId); 
-    // console.log(userId); 
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -49,15 +38,34 @@ export const DeliveryForm = () => {
         fetchWarehouse(); 
       }, []);
 
-      const saveValues = () => {
-          // Add post method here.... 
- 
+      const handleSubmit = (event) => {
+        console.log("POST"); 
+        console.log(selectedProduct);
+        console.log(quantity);
+        console.log(selectedWarehouse);
+        event.preventDefault();
+        // send a POST request
+        Axios({
+          method: 'post',
+          url: 'https://localhost:7176/api/Delivery',
+          data: {
+            date:new Date(),
+            productId: selectedProduct,
+            quantity: quantity,
+            warehouseId: selectedWarehouse,
+            userId: "0460476b-60c9-48e3-9026-561302e7fa59"
+          } 
+          }).then((response) => {
+            console.log(response);
+          }, (error) => {
+            console.log(error);
+          });
     }
     
     return (
         <>
-        <LogOut> </LogOut>
-           <form className="deliveryForm">
+        <LogOut/> 
+           <form className="deliveryForm" onSubmit={handleSubmit}>
            <label>
                 <h2>Product: </h2> 
                 <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
@@ -74,7 +82,7 @@ export const DeliveryForm = () => {
                 <h2> Quantity:</h2> 
                 <input placeholder="pcs" type="text" name="qty" onChange={e => setQuantity(e.target.value)}></input>
             </label> <br/>
-            <button className="saveBtn" type="submit" onClick={saveValues}>SAVE</button>
+            <button className="saveBtn" type="submit">SAVE</button>
             </form>
         </>
     )
