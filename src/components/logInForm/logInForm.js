@@ -39,12 +39,12 @@ export const LogInForm = () => {
            <form className="logInForm" onSubmit={handleSubmit}>
                 <label>
                     <h2 className="loginH2">USERNAME</h2>
-                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
+                    <input type="text" placeholder="Enter username..." value={username} onChange={e => setUsername(e.target.value)} />
                     </label>
                     <br/>
                     <label>
                     <h2 className="loginH2"> PASSWORD: </h2> 
-                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    <input type="password" placeholder="Enter password..." value={password} onChange={e => setPassword(e.target.value)} />
                     </label>
                     <br/>
                     <button className="logInbutton" type="submit">Log in</button>

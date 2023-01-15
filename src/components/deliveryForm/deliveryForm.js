@@ -44,7 +44,7 @@ export const DeliveryForm = () => {
         console.log(quantity);
         console.log(selectedWarehouse);
         event.preventDefault();
-        // send a POST request
+        // Send a POST request
         Axios({
           method: 'post',
           url: 'https://localhost:7176/api/Delivery',
@@ -53,7 +53,7 @@ export const DeliveryForm = () => {
             productId: selectedProduct,
             quantity: quantity,
             warehouseId: selectedWarehouse,
-            userId: "0460476b-60c9-48e3-9026-561302e7fa59"
+            userId: "9f5e7bfd-25cd-4633-a507-634ea5e30dbd"
           } 
           }).then((response) => {
             console.log(response);
