@@ -49,15 +49,32 @@ export const DeliveryForm = () => {
         fetchWarehouse(); 
       }, []);
 
-      const saveValues = () => {
-          // Add post method here.... 
+      const handleSubmit = (event) => {
+        console.log("POST")
+        event.preventDefault();
+        // send a POST request
+        Axios({
+          method: 'post',
+          url: 'https://localhost:7176/api/Delivery',
+          data: {
+            date:new Date(),
+            productId: "P001",
+            quantity: 10,
+            warehouseId: 1,
+            userId: "0460476b-60c9-48e3-9026-561302e7fa59"
+          } 
+          }).then((response) => {
+            console.log(response);
+          }, (error) => {
+            console.log(error);
+          });
  
     }
     
     return (
         <>
         <LogOut> </LogOut>
-           <form className="deliveryForm">
+           <form className="deliveryForm" onSubmit={handleSubmit}>
            <label>
                 <h2>Product: </h2> 
                 <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
@@ -74,7 +91,7 @@ export const DeliveryForm = () => {
                 <h2> Quantity:</h2> 
                 <input placeholder="pcs" type="text" name="qty" onChange={e => setQuantity(e.target.value)}></input>
             </label> <br/>
-            <button className="saveBtn" type="submit" onClick={saveValues}>SAVE</button>
+            <button className="saveBtn" type="submit">SAVE</button>
             </form>
         </>
     )
