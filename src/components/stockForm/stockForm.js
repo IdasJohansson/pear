@@ -1,7 +1,7 @@
-import { useContext, useState, useEffect } from "react";
-import { UserContext } from "../../shared/provider/UserProvider";
+import { useState, useEffect } from "react";
 import Axios from "axios";
-import "./stockForm.css"
+import "./stockForm.css"; 
+import "../../shared/global/style.css"; 
 
 export const StockQuantity = () => {
   const [stockQuantity, setStockQuantity] = useState([]);
@@ -50,7 +50,7 @@ export const StockQuantity = () => {
     <>
     <div className="deliveryForm">
     <h2> Stock quantity </h2>
-    <p> (Presse column header to sort)</p>
+    <p> (Press column header to sort)</p>
     <table className="table">  
             <tr>  
                 <th onClick={() => handleSort("warehouseId")} className={sortBy === "warehouseId" ? "active" : ""}>Warehouse</th>  
@@ -73,77 +73,23 @@ export const StockQuantity = () => {
   )
 }
 
-// export const StockForm = () => {
-//     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
+// This function is using the JavaScript sort() method on the stockQuantity array to sort the elements in the array based on the values of a specific property. The sort() method takes a compare function as an argument, which is passed two elements of the array to compare. The function should return a negative, zero, or positive value, depending on the arguments, like:
 
-//     // To store all the products in a array
-//     const [products, setProducts] = useState([]);
-//     const [selectedProduct, setSelectedProduct] = useState('');
+// a negative value if a should be sorted before b
+// a positive value if b should be sorted before a
+// 0 if a and b are equal and their order doesn't matter
+// The function compares the values of the sortBy property of each element in the array. The sortBy variable is set to the column name that the user wants to sort by.
 
-//     const [warehouse, setWareHouse] = useState([]);
-//     const [selectedWarehouse, setSelectedWarehouse] = useState(''); 
+// The if (sortOrder === "asc") part of the function checks the current sort order, which is either "asc" or "desc" and determines whether to sort the array in ascending or descending order.
 
-// // Add correct values here: 
-// const productId = 'P002'
-// const warehouseId = 3
-// sumQuantity(productId, warehouseId)
+// If the sortOrder is "asc" and the value of a[sortBy] is less than the value of b[sortBy], the function returns -1, which means that a should be sorted before b.
 
-// function sumQuantity(productId, warehouseId) {
-//         Axios.get('https://localhost:7176/api/Delivery')
-//           .then(response => {
-//             const data = response.data;
-//             return data.filter(item => item.productId === productId && item.warehouseId === warehouseId)
-//               .reduce((acc, item) => acc + item.quantity, 0);
-//           })
-//           .then(sum => {
-//             console.log(sum);
-//           })
-//           .catch(error => {
-//             console.log(error);
-//           });
-//       }
+// If the sortOrder is "asc" and the value of a[sortBy] is greater than the value of b[sortBy], the function returns 1, which means that b should be sorted before a.
 
+// If the sortOrder is "desc" and the value of a[sortBy] is greater than the value of b[sortBy], the function returns -1, which means that a should be sorted before b.
 
-//     useEffect(() => {
-//         const fetchProduct = async () => {
-//           try {
-//             const response = await Axios.get("https://localhost:7176/api/Product")
-//             setProducts(response.data);
-//           } catch (error) {
-//             alert("Error retrieving desired data from server: " + error);
-//           }
-//         }
+// If the sortOrder is "desc" and the value of a[sortBy] is less than the value of b[sortBy], the function returns 1, which means that b should be sorted before a.
 
-//         const fetchWarehouse = async () => {
-//             try {
-//               const response = await Axios.get("https://localhost:7176/api/Warehouse")
-//               setWareHouse(response.data);
-//             } catch (error) {
-//               alert("Error retrieving desired data from server: " + error);
-//             }
-//           }
-//         fetchProduct();
-//         fetchWarehouse(); 
-//       }, []);
+// And if none of the conditions are met, it means that a and b are equal and their order doesn't matter so it returns 0.
 
-
-//     return (
-//         <>
-//         <form className="deliveryForm">
-//         <label>
-//                 <h2>Product: </h2> 
-//                 <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
-//                 {products.map(product => <option key={product.id} value={product.id}>{product.name}</option>)}
-//                 </select>
-//             </label> <br/>
-//             <label>
-//                 <h2>Warehouse:</h2> 
-//                 <select value={selectedWarehouse} onChange={e => setSelectedWarehouse(e.target.value)}>
-//                 {warehouse.map(warehouse => <option key={warehouse.id} value={warehouse.id}>{warehouse.city}</option>)}
-//                 </select>
-//             </label> <br/>
-//         <button onClick={sumQuantity}> sum </button>
-//         </form>
-//         </>
-//     )
-// }
+// Once the sort() method is called, it sorts the elements in the array in place and returns the same array, which is then stored in the sortedStockQuantity variable, which is then used to render the table in the return statement.
