@@ -6,6 +6,7 @@ import { DeliveryForm } from "../../components/deliveryForm/deliveryForm";
 import { StockQuantity } from "../../components/stockQuantity/stockQuantity";
 import { Warehouses } from "../../components/warehouses/warehouses";
 import { Products } from "../../components/products/products";
+import { NavBar } from "../../components/navbar/navbar";
 
 export const HomeView = () => {
  
@@ -13,10 +14,13 @@ export const HomeView = () => {
         <>
             <div className="home-container">
             <Header/>
+            <NavBar></NavBar>
+            <div classname="test">
             <DeliveryForm/> 
             <StockQuantity/> 
             <Products> </Products>
             <Warehouses></Warehouses>
+            </div>
             <Footer/>
             </div>
         </>

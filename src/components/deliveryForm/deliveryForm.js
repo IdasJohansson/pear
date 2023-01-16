@@ -3,7 +3,7 @@ import "./deliveryForm.css";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 import Axios from "axios";
-import { LogOut } from "../logOut/logOut";
+
 
 export const DeliveryForm = () => {
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
@@ -64,7 +64,6 @@ export const DeliveryForm = () => {
     
     return (
         <>
-        <LogOut/> 
            <form className="deliveryForm" onSubmit={handleSubmit}>
              <p> All fields are dropdown menus, press input field to view options.</p>
              <p> You must select both product and warehouse and insert quantity to register stock.</p>
