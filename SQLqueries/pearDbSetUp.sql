@@ -5,7 +5,7 @@ USE pearDB;
 /*UNIQUEIDENTIFIER is also refferd to as GUIDs (Globally Unique Identifier)*/
 CREATE TABLE Users (
     id UNIQUEIDENTIFIER PRIMARY KEY default NEWID(),
-    userName VARCHAR(255) NOT NULL,
+    userName VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(30),
 );
 GO
@@ -28,18 +28,19 @@ CREATE TABLE Delivery(
     productId VARCHAR(30), 
     quantity INT, 
     warehouseId INT, 
-    userId UNIQUEIDENTIFIER, 
-    FOREIGN KEY (userId) REFERENCES Users(id), 
+    userName VARCHAR(255), 
+    FOREIGN KEY (userName) REFERENCES Users(userName), 
     FOREIGN KEY (warehouseId) REFERENCES Warehouse(id), 
     FOREIGN KEY (productId) REFERENCES Products(id), 
 ); 
 
+
 CREATE TABLE Logger(
     id UNIQUEIDENTIFIER PRIMARY KEY default NEWID(), 
     date DATETIME NOT NULL DEFAULT (GETDATE()), 
-    userId UNIQUEIDENTIFIER, 
+    userName VARCHAR(255), 
     deliveryId UNIQUEIDENTIFIER, 
-    FOREIGN KEY (userId) REFERENCES Users(id), 
+    FOREIGN KEY (userName) REFERENCES Users(userName), 
     FOREIGN KEY (deliveryId) REFERENCES Delivery(id), 
 ); 
 GO
@@ -50,18 +51,13 @@ AFTER INSERT
 AS
     BEGIN 
     DECLARE
-    @userId UNIQUEIDENTIFIER,
+    @userName VARCHAR(255),
     @deliveryId UNIQUEIDENTIFIER
-    SELECT @userId = INSERTED.userId, 
+    SELECT @userName = INSERTED.userName, 
     @deliveryId = INSERTED.id
     FROM INSERTED
-    INSERT INTO Logger(userId,deliveryId) VALUES(@userId, @deliveryId)
+    INSERT INTO Logger(userName,deliveryId) VALUES(@userName, @deliveryId)
 END
-GO
-
-INSERT INTO Delivery ( productId, quantity, warehouseId, userId) values ('P003', 10000,1,'0460476b-60c9-48e3-9026-561302e7fa59' );
-INSERT INTO Delivery ( productId, quantity, warehouseId, userId) values ('P003', 80000,2,'0460476b-60c9-48e3-9026-561302e7fa59' );
-INSERT INTO Delivery ( productId, quantity, warehouseId, userId) values ('P002', 10000,3,'0460476b-60c9-48e3-9026-561302e7fa59' );
 GO
 
 INSERT INTO Users ( userName, password) values ('Admin', 'P@ssw0rd');
@@ -77,10 +73,13 @@ INSERT INTO Products ( id, name, price) values ('P002', 'jPlatta', 5700);
 INSERT INTO Products ( id, name, price) values ('P003', 'Päronklocka', 11000);
 GO
 
+INSERT INTO Delivery ( productId, quantity, warehouseId, userName) values ('P001', 20000,1,'Admin' );
+INSERT INTO Delivery ( productId, quantity, warehouseId, userName) values ('P003', 80000,2,'Admin' );
+INSERT INTO Delivery ( productId, quantity, warehouseId, userName) values ('P002', 10000,3,'Admin' );
+GO
+
 SELECT * FROM users; 
 SELECT * FROM warehouse; 
 SELECT * FROM products; 
 SELECT * FROM delivery; 
 SELECT * FROM logger; 
-
-
