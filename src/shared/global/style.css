@@ -15,7 +15,7 @@
 }
 
 img {
-  max-width: 100%; /*Så att inte bilden blir större än sitt föräldraelement*/
+  max-width: 100%; /*Så att inte bilden blir större än sitt föräldra element*/
 }
 
 input{
@@ -48,8 +48,9 @@ select{
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
+    /*
     background-image: linear-gradient(var(--darkcolor), var(--lightcolor)); 
-     /* background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
+    background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
     background-repeat: no-repeat;
     background-position:bottom left;   */
 }

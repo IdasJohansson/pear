@@ -11,7 +11,7 @@ export const HomeView = () => {
  
     return (
         <>
-            <div className="container">
+            <div className="home-container">
             <Header/>
             <DeliveryForm/> 
             <StockQuantity/> 
