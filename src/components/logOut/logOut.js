@@ -7,7 +7,6 @@ import { useContext } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 
 
-
 export const LogOut = () => {
 
     const navigate = useNavigate(); 
