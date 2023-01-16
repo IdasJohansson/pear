@@ -11,9 +11,9 @@ export const DeliveryForm = () => {
     // To store all the products in a array
     const [products, setProducts] = useState([]);
     // To store the value being chosen in the dropdownmeny
-    const [selectedProduct, setSelectedProduct] = useState('');
+    const [selectedProduct, setSelectedProduct] = useState('P001');
     const [warehouse, setWareHouse] = useState([]);
-    const [selectedWarehouse, setSelectedWarehouse] = useState(''); 
+    const [selectedWarehouse, setSelectedWarehouse] = useState('1'); 
     const [quantity, setQuantity] = useState(''); 
 
     useEffect(() => {
@@ -53,7 +53,7 @@ export const DeliveryForm = () => {
             productId: selectedProduct,
             quantity: quantity,
             warehouseId: selectedWarehouse,
-            userId: "9f5e7bfd-25cd-4633-a507-634ea5e30dbd"
+            userName: authenticatedUser
           } 
           }).then((response) => {
             console.log(response);
