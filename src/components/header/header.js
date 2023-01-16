@@ -6,7 +6,7 @@ export const Header = () => {
     return (
         <>
         <div className="header-container">
-        <h1> PÄRON AB DELIVERIES </h1>
+        <h1> PÄRON AB </h1>
         </div>
         </>
     )
