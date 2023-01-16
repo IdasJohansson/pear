@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Axios from "axios";
-import "./stockForm.css"; 
+import "./stockQuantity.css"; 
 import "../../shared/global/style.css"; 
 
 export const StockQuantity = () => {

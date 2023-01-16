@@ -66,6 +66,10 @@ export const DeliveryForm = () => {
         <>
         <LogOut/> 
            <form className="deliveryForm" onSubmit={handleSubmit}>
+             <p> All fields are dropdown menus, press input field to view options.</p>
+             <p> You must select both product and warehouse and insert quantity to register stock.</p>
+             <p> For incoming stock enter quantity, for putgoing stock add a - before the quantity. </p>
+             <p> Ex: -1000</p>
            <label>
                 <h2>Product: </h2> 
                 <select value={selectedProduct} onChange={e => setSelectedProduct(e.target.value)}>
