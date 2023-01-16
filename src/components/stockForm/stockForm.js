@@ -55,8 +55,8 @@ export const StockQuantity = () => {
     <table className="table">  
       <thead>
             <tr>  
-                <th onClick={() => handleSort("warehouseName")} className={sortBy === "warehouseName" ? "active" : ""}>Warehouse</th>  
                 <th onClick={() => handleSort("productName")} className={sortBy === "productName" ? "active" : ""}>Product</th>  
+                <th onClick={() => handleSort("warehouseName")} className={sortBy === "warehouseName" ? "active" : ""}>Warehouse</th>  
                 <th onClick={() => handleSort("quantity")} className={sortBy === "quantity" ? "active" : ""}>Quantity</th>  
             </tr>  
       </thead>
