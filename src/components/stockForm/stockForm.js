@@ -19,6 +19,7 @@ export const StockQuantity = () => {
     fecthWarehouseProductQuantity(); 
   },[]); 
 
+    // As a start the table is sorted by warehouseId in asc order. 
     const [sortBy, setSortBy] = useState("warehouseId");
     const [sortOrder, setSortOrder] = useState("asc");
 
@@ -59,7 +60,7 @@ export const StockQuantity = () => {
                 <th onClick={() => handleSort("quantity")} className={sortBy === "quantity" ? "active" : ""}>Quantity</th>  
             </tr>  
       </thead>
-    <tbody>
+        <tbody>
             {sortedStockQuantity.map((stockQuantity, index) => (  
               <tr data-index={index}>  
                 <td>{stockQuantity.warehouseName}</td>  
@@ -67,9 +68,8 @@ export const StockQuantity = () => {
                 <td>{stockQuantity.quantity}</td>  
               </tr>  
             ))}  
-    </tbody>
-        </table>  
-    
+        </tbody>
+      </table>  
     </div>
     </>
   )
