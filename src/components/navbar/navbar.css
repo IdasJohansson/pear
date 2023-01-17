@@ -22,3 +22,8 @@
     flex-direction:column;
     float: left;
 }
+
+.active{
+    background-color: var(--lightcolor); 
+    color: var(--darkcolor);
+}

@@ -8,6 +8,7 @@ import LocalStorage from "../shared/storage/LocalStorage";
 import { ProductsView } from "../views/productsView/productsView";
 import { WarehouseView } from "../views/warehouseView/warehouseView";
 import { QuantityView } from "../views/quantityView/quantityView";
+import { LoggerView } from "../views/loggerView/loggerView";
 
 
 export const Routing = () => {
@@ -45,7 +46,7 @@ export const Routing = () => {
         <Route exact path={routingPath.productsView} element={authenticationRequierd(<ProductsView/>)} />
         <Route exact path={routingPath.warehouseView} element={authenticationRequierd(<WarehouseView/>)} />
         <Route exact path={routingPath.quantityView} element={authenticationRequierd(<QuantityView/>)} />
-        <Route exact path={routingPath.homeView} element={authenticationRequierd(<HomeView/>)} />
+        <Route exact path={routingPath.loggerView} element={authenticationRequierd(<LoggerView/>)} />
         </Routes>
         </BrowserRouter>
     )

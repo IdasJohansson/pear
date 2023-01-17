@@ -57,10 +57,11 @@ export const DeliveryForm = () => {
           } 
           }).then((response) => {
             console.log(response);
+            alert("Saved!")
           }, (error) => {
             console.log(error);
+            alert(error); 
           });
-          alert("Saved")
     }
     
     return (
@@ -68,7 +69,7 @@ export const DeliveryForm = () => {
            <form className="deliveryForm" onSubmit={handleSubmit}>
              <p> All fields are dropdown menus, press input field to view options.</p>
              <p> You must select both product and warehouse and insert quantity to register stock.</p>
-             <p> For incoming stock enter quantity, for putgoing stock add a - before the quantity. </p>
+             <p> For incoming stock enter quantity, for outgoing stock add a - before the quantity. </p>
              <p> Ex: -1000</p>
            <label>
                 <h2>Product: </h2> 
