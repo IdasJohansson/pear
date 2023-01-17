@@ -42,15 +42,13 @@ select{
   border: 2px dashed black;
 }
 
-
-
 .container{
-    min-height: 100vh;  
-    display: flex;
-    flex-direction: column;
-    /*
     background-image: linear-gradient(var(--darkcolor), var(--lightcolor)); 
+    box-sizing: border-box;
+    min-height: 95vh; 
+    /*
     background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
+    background-image: linear-gradient(var(--darkcolor), var(--lightcolor)); 
     background-repeat: no-repeat;
     background-position:bottom left;   */
 }

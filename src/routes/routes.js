@@ -5,6 +5,9 @@ import routingPath from "./routingPath";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../shared/provider/UserProvider";
 import LocalStorage from "../shared/storage/LocalStorage"; 
+import { ProductsView } from "../views/productsView/productsView";
+import { WarehouseView } from "../views/warehouseView/warehouseView";
+import { QuantityView } from "../views/quantityView/quantityView";
 
 
 export const Routing = () => {
@@ -38,6 +41,10 @@ export const Routing = () => {
         {/* Routes ser till att endast en del läggs till i taget */}
         <Routes>
         <Route path={routingPath.signInView} element={blockIfAuthenticated(<SignInView/>)}/>
+        <Route exact path={routingPath.homeView} element={authenticationRequierd(<HomeView/>)} />
+        <Route exact path={routingPath.productsView} element={authenticationRequierd(<ProductsView/>)} />
+        <Route exact path={routingPath.warehouseView} element={authenticationRequierd(<WarehouseView/>)} />
+        <Route exact path={routingPath.quantityView} element={authenticationRequierd(<QuantityView/>)} />
         <Route exact path={routingPath.homeView} element={authenticationRequierd(<HomeView/>)} />
         </Routes>
         </BrowserRouter>

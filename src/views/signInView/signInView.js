@@ -9,7 +9,7 @@ export const SignInView = () => {
 
     return (
         <>
-            <div className="container">
+            <div className="signIn-container">
             <Header/>
             <video autoPlay loop muted id="video"> 
                 <source src={backgroundVideo} type="video/mp4"/> 

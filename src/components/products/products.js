@@ -60,8 +60,8 @@ export const Products = () => {
                 </tr>  
         </thead>
             <tbody>
-                {sortedProducts.map((products, index) => (  
-                <tr data-index={index}>  
+                {sortedProducts.map((products) => (  
+                <tr key={products.id}>  
                     <td>{products.id}</td>  
                     <td>{products.name}</td>  
                     <td>{products.price}</td>  
