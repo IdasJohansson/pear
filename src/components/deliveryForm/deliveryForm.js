@@ -60,6 +60,7 @@ export const DeliveryForm = () => {
           }, (error) => {
             console.log(error);
           });
+          alert("Saved")
     }
     
     return (

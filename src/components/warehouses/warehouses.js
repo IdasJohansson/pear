@@ -58,12 +58,12 @@ export const Warehouses = () => {
                     <th onClick={() => handleSort("city")} className={sortBy === "city" ? "active" : ""}>City</th>  
                 </tr>  
         </thead>
-            <tbody>
-                {sortedWarehouses.map((warehouse, index) => (  
-                <tr data-index={index}>  
-                    <td>{warehouse.id}</td>  
-                    <td>{warehouse.city}</td>  
-                </tr>  
+        <tbody>
+                {sortedWarehouses.map((warehouse) => (  
+                    <tr key={warehouse.id}>  
+                        <td>{warehouse.id}</td>  
+                        <td>{warehouse.city}</td>  
+                    </tr>  
                 ))}  
             </tbody>
         </table>  
@@ -71,3 +71,6 @@ export const Warehouses = () => {
         </>
     )
 }
+
+//key={warehouse.id} https://reactjs.org/docs/lists-and-keys.html
+// Used to keep track of the rendering elements

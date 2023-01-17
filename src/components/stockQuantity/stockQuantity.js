@@ -61,8 +61,8 @@ export const StockQuantity = () => {
             </tr>  
       </thead>
         <tbody>
-            {sortedStockQuantity.map((stockQuantity, index) => (  
-              <tr data-index={index}>  
+            {sortedStockQuantity.map((stockQuantity,index) => (  
+              <tr key={index}>  
                 <td>{stockQuantity.warehouseName}</td>  
                 <td>{stockQuantity.productName}</td>  
                 <td>{stockQuantity.quantity}</td>  
@@ -75,7 +75,7 @@ export const StockQuantity = () => {
   )
 }
 
-// This function is using the JavaScript sort() method on the stockQuantity array to sort the elements in the array based on the values of a specific property. The sort() method takes a compare function as an argument, which is passed two elements of the array to compare. The function should return a negative, zero, or positive value, depending on the arguments, like:
+// The function is using the JavaScript sort() method on the stockQuantity array to sort the elements in the array based on the values of a specific property. The sort() method takes a compare function as an argument, which is passed two elements of the array to compare. The function should return a negative, zero, or positive value, depending on the arguments, like:
 
 // a negative value if a should be sorted before b
 // a positive value if b should be sorted before a
