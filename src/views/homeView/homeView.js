@@ -14,7 +14,6 @@ export const HomeView = () => {
             <Header/>
             <NavBar/>
             <DeliveryForm/> 
-            <StockQuantity/> 
             </div>
             <Footer/>
         </>
