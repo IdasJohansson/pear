@@ -1,7 +1,7 @@
 import "../../shared/global/style.css"; 
 import "./logger.css";
 import { useState, useEffect } from "react";
-import Axios from "axios";
+import pearAPIService from "../../shared/api/service/pearAPIService";
 
 export const Logger = () => {
     const [deliveryLog, setDeliveryLog] = useState([]);
@@ -9,7 +9,7 @@ export const Logger = () => {
     useEffect(() => {
         const fetchDelivery = async () => {
             try {
-              const response = await Axios.get("https://localhost:7176/api/Delivery")
+              const response = await pearAPIService.getDelivery(); 
               setDeliveryLog(response.data);
             } catch (error) {
               alert("Error retrieving desired data from server: " + error);

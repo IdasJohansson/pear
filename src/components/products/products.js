@@ -1,7 +1,8 @@
 import "../../shared/global/style.css"; 
 import "./products.css";
 import { useState, useEffect } from "react";
-import Axios from "axios";
+import pearAPIService from "../../shared/api/service/pearAPIService";
+
 
 export const Products = () => {
     const [products, setProducts] = useState([]);
@@ -9,7 +10,7 @@ export const Products = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-              const response = await Axios.get("https://localhost:7176/api/Product")
+              const response = await pearAPIService.getProducts(); 
               setProducts(response.data);
             } catch (error) {
               alert("Error retrieving desired data from server: " + error);

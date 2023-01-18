@@ -1,7 +1,8 @@
 import "../../shared/global/style.css"; 
 import "./warehouses.css";
 import { useState, useEffect } from "react";
-import Axios from "axios";
+import pearAPIService from "../../shared/api/service/pearAPIService";
+
 
 export const Warehouses = () => {
     const [warehouse, setWareHouse] = useState([]);
@@ -9,7 +10,7 @@ export const Warehouses = () => {
     useEffect(() => {
         const fetchWarehouse = async () => {
             try {
-              const response = await Axios.get("https://localhost:7176/api/Warehouse")
+              const response = await pearAPIService.getWarehouses(); 
               setWareHouse(response.data);
             } catch (error) {
               alert("Error retrieving desired data from server: " + error);
@@ -73,4 +74,4 @@ export const Warehouses = () => {
 }
 
 //key={warehouse.id} https://reactjs.org/docs/lists-and-keys.html
-// Used to keep track of the rendering elements
+// The key is used to keep track of the rendering elements
