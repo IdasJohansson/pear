@@ -6,9 +6,7 @@ import LocalStorage from "../../shared/storage/LocalStorage";
 import { useContext } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 
-
 export const LogOut = () => {
-
     const navigate = useNavigate(); 
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext); 
 
@@ -20,9 +18,11 @@ export const LogOut = () => {
 
     return(
         <>
+        <div className="logOut"> 
         <p id="user"> User: {authenticatedUser}</p> 
         <div id="logOutButton">
             <button className="logOutbutton" type="submit" onClick={()=> logOut()}> LOG OUT </button>
+        </div>
         </div>
         </>
     )

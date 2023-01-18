@@ -20,7 +20,6 @@ export const LogInForm = () => {
         .then(response => {
         if (response.data) {
             // login was successful
-            console.log("User logged in.");
             // Give a value to authentictedUser
             setAuthenticatedUser(username); 
             // Saves loggedIn user in localstorage

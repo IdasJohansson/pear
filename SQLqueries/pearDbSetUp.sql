@@ -6,7 +6,7 @@ USE pearDB;
 CREATE TABLE Users (
     id UNIQUEIDENTIFIER PRIMARY KEY default NEWID(),
     userName VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(30),
+    password VARCHAR(200),
 );
 GO
 
@@ -83,3 +83,9 @@ SELECT * FROM warehouse;
 SELECT * FROM products; 
 SELECT * FROM delivery; 
 SELECT * FROM logger; 
+
+
+
+
+
+
