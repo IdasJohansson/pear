@@ -3,7 +3,7 @@ import "./logInForm.css"
 import { useContext, useState } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 import LocalStorage from "../../shared/storage/LocalStorage"; 
-import Axios from "axios";
+import PearAPI from "../../shared/api/pearAPI";
 
 export const LogInForm = () => {
     // AuthenticatedUser is a global state
@@ -15,8 +15,8 @@ export const LogInForm = () => {
     // Prevent the page from refreshing when form is submitted so that the apiCall will be called. 
     event.preventDefault();
     const user = { UserName: username, Password: password };
-    Axios
-        .post("https://localhost:7176/api/User/CheckLogin", user)
+    PearAPI
+        .post("User/CheckLogin", user)
         .then(response => {
         if (response.data) {
             // login was successful

@@ -2,8 +2,8 @@ import "../../shared/global/style.css";
 import "./deliveryForm.css"; 
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
-import Axios from "axios";
 import pearAPIService from "../../shared/api/service/pearAPIService";
+import PearAPI from "../../shared/api/pearAPI";
 
 
 export const DeliveryForm = () => {
@@ -46,24 +46,22 @@ export const DeliveryForm = () => {
         console.log(selectedWarehouse);
         event.preventDefault();
         // Send a POST request
-        Axios({
-          method: 'post',
-          url: 'https://localhost:7176/api/Delivery',
-          data: {
-            date:new Date(),
-            productId: selectedProduct,
-            quantity: quantity,
-            warehouseId: selectedWarehouse,
-            userName: authenticatedUser
-          } 
-          }).then((response) => {
-            console.log(response);
-            alert("Saved!")
-          }, (error) => {
-            console.log(error);
-            alert(error); 
-          });
-    }
+        PearAPI.post("/Delivery", {
+          date: new Date(),
+          productId: selectedProduct,
+          quantity: quantity,
+          warehouseId: selectedWarehouse,
+          userName: authenticatedUser
+      })
+      .then((response) => {
+          console.log(response);
+          alert("Saved!")
+      })
+      .catch((error) => {
+          console.log(error);
+          alert(error); 
+      });
+  };
     
     return (
         <>

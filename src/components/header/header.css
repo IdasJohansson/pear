@@ -1,5 +1,5 @@
 .header-container{
-    height: 260px; 
+    height: 200px; 
     text-align: right;
     margin-bottom: 20px; 
     background-color: var(--darkcolor);
@@ -7,6 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 13px 3px black;
 }
 
 h1{

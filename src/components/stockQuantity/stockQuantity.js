@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import Axios from "axios";
 import "./stockQuantity.css"; 
 import "../../shared/global/style.css"; 
+import PearAPI from "../../shared/api/pearAPI";
 
 export const StockQuantity = () => {
   const [stockQuantity, setStockQuantity] = useState([]);
@@ -9,7 +9,7 @@ export const StockQuantity = () => {
   useEffect(() => {
    const fecthWarehouseProductQuantity = async () => {
       try{
-        const response = await Axios.get("https://localhost:7176/api/Delivery/warehouse-product-quantity")
+        const response = await PearAPI.get("Delivery/warehouse-product-quantity")
         setStockQuantity(response.data); 
         console.log(response.data)
       } catch(error) {
