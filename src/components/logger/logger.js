@@ -2,6 +2,7 @@ import "../../shared/global/style.css";
 import "./logger.css";
 import { useState, useEffect } from "react";
 import pearAPIService from "../../shared/api/service/pearAPIService";
+import dateFormat, { masks } from "dateformat";
 
 export const Logger = () => {
     const [deliveryLog, setDeliveryLog] = useState([]);
@@ -22,7 +23,7 @@ export const Logger = () => {
     // The localCompare method is used for sorting strings
     // [...deliveryLog] creates a new array with the elements of the deliveryLog array, so that it can be sorted and set to state without modifying the original array.
     const sortByDate = () => {
-        setDeliveryLog([...deliveryLog].sort((a, b) => a.date.localeCompare(b.date)));
+        setDeliveryLog([...deliveryLog].sort((b, a) => a.date.localeCompare(b.date)));
     }
 
     const sortByProductId = () => {
@@ -60,7 +61,7 @@ export const Logger = () => {
             <tbody>
             {deliveryLog.map((log, index) => (
                 <tr key={index}>  
-                    <td>{log.date}</td>  
+                    <td>{dateFormat(log.date)}</td>  
                     <td>{log.productId}</td>  
                     <td>{log.quantity}</td>  
                     <td>{log.warehouseId}</td>  

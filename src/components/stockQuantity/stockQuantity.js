@@ -11,7 +11,6 @@ export const StockQuantity = () => {
       try{
         const response = await PearAPI.get("Delivery/warehouse-product-quantity")
         setStockQuantity(response.data); 
-        console.log(response.data)
       } catch(error) {
         alert("Error retrieving desired data from server: " + error);
       }
@@ -55,8 +54,8 @@ export const StockQuantity = () => {
     <table className="table">  
       <thead>
             <tr>  
-                <th onClick={() => handleSort("productName")} className={sortBy === "productName" ? "active" : ""}>Warehouse</th>  
-                <th onClick={() => handleSort("warehouseName")} className={sortBy === "warehouseName" ? "active" : ""}>Product</th>  
+                <th onClick={() => handleSort("warehouseName")} className={sortBy === "warehouseName" ? "active" : ""}>Warehouse</th>  
+                <th onClick={() => handleSort("productName")} className={sortBy === "productName" ? "active" : ""}>Product</th>  
                 <th onClick={() => handleSort("quantity")} className={sortBy === "quantity" ? "active" : ""}>Quantity</th>  
             </tr>  
       </thead>

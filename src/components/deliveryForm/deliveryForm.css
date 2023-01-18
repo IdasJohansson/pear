@@ -25,3 +25,30 @@
     opacity:0.7;
     cursor: pointer;
 }
+
+input{
+    height: 30px; 
+    font-family: Arial, Helvetica, sans-serif;
+    width: 200px; 
+    font-size: large;
+    cursor: pointer;
+    border: 2px dashed black;
+    }
+    
+    input:focus{
+      outline:none; 
+    }
+    
+    select{
+      height: 30px; 
+      font-family: Arial, Helvetica, sans-serif;
+      width: 200px; 
+      font-size: large;
+      appearance: none;
+      outline: 0;
+      cursor: pointer;
+      border: 2px dashed black;
+    }
+
+
+
