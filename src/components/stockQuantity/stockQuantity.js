@@ -83,15 +83,10 @@ export const StockQuantity = () => {
 // The function compares the values of the sortBy property of each element in the array. The sortBy variable is set to the column name that the user wants to sort by.
 
 // The if (sortOrder === "asc") part of the function checks the current sort order, which is either "asc" or "desc" and determines whether to sort the array in ascending or descending order.
-
 // If the sortOrder is "asc" and the value of a[sortBy] is less than the value of b[sortBy], the function returns -1, which means that a should be sorted before b.
-
 // If the sortOrder is "asc" and the value of a[sortBy] is greater than the value of b[sortBy], the function returns 1, which means that b should be sorted before a.
-
 // If the sortOrder is "desc" and the value of a[sortBy] is greater than the value of b[sortBy], the function returns -1, which means that a should be sorted before b.
-
 // If the sortOrder is "desc" and the value of a[sortBy] is less than the value of b[sortBy], the function returns 1, which means that b should be sorted before a.
-
 // And if none of the conditions are met, it means that a and b are equal and their order doesn't matter so it returns 0.
 
 // Once the sort() method is called, it sorts the elements in the array in place and returns the same array, which is then stored in the sortedStockQuantity variable, which is then used to render the table in the return statement.

@@ -3,6 +3,7 @@ import "./deliveryForm.css";
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../shared/provider/UserProvider";
 import Axios from "axios";
+import pearAPIService from "../../shared/api/service/pearAPIService";
 
 
 export const DeliveryForm = () => {
@@ -19,7 +20,7 @@ export const DeliveryForm = () => {
     useEffect(() => {
         const fetchProduct = async () => {
           try {
-            const response = await Axios.get("https://localhost:7176/api/Product")
+            const response = await pearAPIService.getProducts(); 
             setProducts(response.data);
           } catch (error) {
             alert("Error retrieving desired data from server: " + error);
@@ -28,7 +29,7 @@ export const DeliveryForm = () => {
 
         const fetchWarehouse = async () => {
             try {
-              const response = await Axios.get("https://localhost:7176/api/Warehouse")
+              const response = await pearAPIService.getWarehouses(); 
               setWareHouse(response.data);
             } catch (error) {
               alert("Error retrieving desired data from server: " + error);
