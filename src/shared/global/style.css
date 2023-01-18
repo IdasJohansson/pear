@@ -48,6 +48,7 @@ select{
     background-image: linear-gradient(var(--darkcolor), var(--lightcolor)); 
     box-sizing: border-box;
     min-height: 95vh; 
+    padding-bottom: 20px;
     /*
     background-image: url('/Users/ida/pear/src/shared/img/logo512.png');
     background-image: linear-gradient(var(--darkcolor), var(--lightcolor)); 
