@@ -39,7 +39,6 @@ export const Routing = () => {
 
     return (
         <BrowserRouter>
-        {/* Routes ser till att endast en del läggs till i taget */}
         <Routes>
         <Route path={routingPath.signInView} element={blockIfAuthenticated(<SignInView/>)}/>
         <Route exact path={routingPath.homeView} element={authenticationRequierd(<HomeView/>)} />

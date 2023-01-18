@@ -5,14 +5,14 @@ import { useState,useEffect } from "react";
 
 export const NavBar = () => {
     const navigate = useNavigate();
-    const [currentPage, setCurrentPage] = useState("homeView");
+    // const [currentPage, setCurrentPage] = useState("homeView");
 
-    // Använd evetuellt för att visa ändra färg på den aktiva knappen. 
-    useEffect(() => {
-        const path = window.location.pathname;
-        const page = Object.keys(routingPath).find(key => routingPath[key] === path);
-        setCurrentPage(page);
-    }, []);
+    // // Använd evetuellt för att visa ändra färg på den aktiva knappen. 
+    // useEffect(() => {
+    //     const path = window.location.pathname;
+    //     const page = Object.keys(routingPath).find(key => routingPath[key] === path);
+    //     setCurrentPage(page);
+    // }, []);
     
     return(
         <>
