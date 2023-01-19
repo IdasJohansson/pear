@@ -49,14 +49,14 @@ export const StockQuantity = () => {
   return (
     <>
     <div className="deliveryForm">
-    <h2> Stock quantity </h2>
+    <h2> Stock balancy </h2>
     <p> (Press column header to sort)</p>
     <table className="table">  
       <thead>
             <tr>  
                 <th onClick={() => handleSort("warehouseName")} className={sortBy === "warehouseName" ? "active" : ""}>Warehouse</th>  
                 <th onClick={() => handleSort("productName")} className={sortBy === "productName" ? "active" : ""}>Product</th>  
-                <th onClick={() => handleSort("quantity")} className={sortBy === "quantity" ? "active" : ""}>Quantity</th>  
+                <th onClick={() => handleSort("quantity")} className={sortBy === "quantity" ? "active" : ""}>Stock Balance</th>  
             </tr>  
       </thead>
         <tbody>

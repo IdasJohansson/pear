@@ -2,7 +2,7 @@ import "../../shared/global/style.css";
 import "./logger.css";
 import { useState, useEffect } from "react";
 import pearAPIService from "../../shared/api/service/pearAPIService";
-import dateFormat, { masks } from "dateformat";
+import dateFormat from "dateformat";
 
 export const Logger = () => {
     const [deliveryLog, setDeliveryLog] = useState([]);
