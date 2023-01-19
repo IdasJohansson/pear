@@ -42,7 +42,7 @@ export const LogInForm = () => {
                     </label>
                     <br/>
                     <label>
-                    <h2 className="loginH2"> PASSWORD: </h2> 
+                    <h2 className="loginH2"> PASSWORD </h2> 
                     <input type="password" placeholder="Enter password..." value={password} onChange={e => setPassword(e.target.value)} />
                     </label>
                     <br/>
