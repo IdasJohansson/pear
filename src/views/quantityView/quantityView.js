@@ -1,8 +1,9 @@
 import { Header } from "../../components/header/header"; 
 import { Footer } from "../../components/footer/footer";
 import { NavBar } from "../../components/navbar/navbar";
-import { StockQuantity } from "../../components/stockQuantity/stockQuantity";
 import { LogOut } from "../../components/logOut/logOut";
+import { DeliveryForm } from "../../components/deliveryForm/deliveryForm";
+
 
 export const QuantityView = () => {
     
@@ -12,7 +13,7 @@ export const QuantityView = () => {
         <Header/>
         <NavBar/>
         <LogOut/>
-        <StockQuantity/>
+        <DeliveryForm/>
         </div>
        <Footer/> 
         </>
