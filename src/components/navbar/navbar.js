@@ -8,8 +8,8 @@ export const NavBar = () => {
     return(
         <>
         <div className="navBar">
-        <button className="navButton" onClick={() => navigate(routingPath.homeView)}> HOME</button>
-        <button className="navButton" onClick={() => navigate(routingPath.quantityView)}> STOCK BALANCE </button>
+        <button className="navButton" onClick={() => navigate(routingPath.homeView)}> STOCK BALANCE</button>
+        <button className="navButton" onClick={() => navigate(routingPath.quantityView)}> REGISTER DELIVERY </button>
         <button className="navButton" onClick={() => navigate(routingPath.productsView)}> PRODUCTS</button>
         <button className="navButton" onClick={() => navigate(routingPath.warehouseView)}> WAREHOUSES </button>
         <button className="navButton" onClick={() => navigate(routingPath.loggerView)}> DELIVERY LOG </button>

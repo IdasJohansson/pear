@@ -2,9 +2,9 @@ import "./homeView.css"
 import "../../shared/global/style.css"
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
-import { DeliveryForm } from "../../components/deliveryForm/deliveryForm";
 import { NavBar } from "../../components/navbar/navbar";
 import { LogOut } from "../../components/logOut/logOut";
+import { StockQuantity } from "../../components/stockQuantity/stockQuantity";
 
 export const HomeView = () => {
  
@@ -14,7 +14,7 @@ export const HomeView = () => {
             <Header/>
             <NavBar/>
             <LogOut/>
-            <DeliveryForm/> 
+            <StockQuantity/>
             </div>
             <Footer/>
         </>
